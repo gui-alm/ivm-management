@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+    Projeto BD Grupo 87
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {background-color:#ffffff;background-repeat:no-repeat;background-position:top left;background-attachment:fixed;}
+    h1{text-align:center;font-family:Helvetica, sans-serif;font-variant:small-caps;color:#6d6bf5;background-color:#ffffff;}
+    p {font-family:Georgia, serif;font-size:14px;font-style:normal;font-weight:normal;color:#000000;background-color:#ffffff;}
+    </style>
+<!--(ean, nro, num_serie, fabricante, instante, unidades, tin)-->
+</head>
+    <body>
+        <style>
+            h3{text-align:left;font-family:Helvetica, sans-serif;color:#066eff;background-color:#ffffff;}
+        </style>
+        <h1> Eventos de Reposição da IVM com número de série {{num_serie}} e fabricante {{fabricante}}</h1>
+        <p></p>
+        {% if cursor %}
+        <table border="2px" align="left">
+            <thead>
+                <tr>
+                    <th>EAN</th>
+                    <th>NRO</th>
+                    <th>Número de Série</th>
+                    <th>Fabricante</th>
+                    <th>Instante</th>
+                    <th>Unidades</th>
+                    <th>TIN</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in cursor %}
+                    <tr>
+                        <td>{{ record[0] }}</td>
+                        <td>{{ record[1] }}</td>
+                        <td>{{ record[2] }}</td>
+                        <td>{{ record[3] }}</td>
+                        <td>{{ record[4] }}</td>
+                        <td>{{ record[5] }}</td>
+                        <td>{{ record[6] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table border="2px" align="right">
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Número de Reposições</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>{{ nome_cat }}</td>
+                        <td>{{ sum_cats }}</td>
+                    </tr>
+            </tbody>
+        </table>
+    {% else %}
+    <p> Erro: não foi possível obter dados da base de dados!</p>
+    {% endif %}
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+    Projeto BD Grupo 87
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {background-color:#ffffff;background-repeat:no-repeat;background-position:top left;background-attachment:fixed;}
+    h1{text-align:center;font-family:Helvetica, sans-serif;font-variant:small-caps;color:#6d6bf5;background-color:#ffffff;}
+    p {font-family:Georgia, serif;font-size:14px;font-style:normal;font-weight:normal;color:#000000;background-color:#ffffff;}
+    </style>
+<!--(ean, nro, num_serie, fabricante, instante, unidades, tin)-->
+</head>
+    <body>
+        <style>
+            h3{text-align:left;font-family:Helvetica, sans-serif;color:#066eff;background-color:#ffffff;}
+
+        </style>
+        <h1> Sub-Categorias da categoria {{super_categoria}}</h1>
+        <p></p>
+        {% if cursor %}
+        <table border="2px" align="center">
+            <thead>
+                <tr>
+                    <th>Sub-Categorias</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in cursor %}
+                    <tr>
+                        <td>{{ record[0] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    {% else %}
+    <p> Erro: não foi possível obter dados da base de dados!</p>
+    {% endif %}
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+    Projeto BD Grupo 87
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {background-color:#ffffff;background-repeat:no-repeat;background-position:top left;background-attachment:fixed;}
+    h1{text-align:center;font-family:Helvetica, sans-serif;font-variant:small-caps;color:#6d6bf5;background-color:#ffffff;}
+    p {font-family:Georgia, serif;font-size:14px;font-style:normal;font-weight:normal;color:#000000;background-color:#ffffff;}
+    </style>
+</head>
+    <body>
+        <style>
+            h3{text-align:left;font-family:Helvetica, sans-serif;color:#066eff;background-color:#ffffff;}
+        </style>
+        <h1>IVM Management</h1>
+        <p></p>
+        <h2> ALINEA A</h2>
+        <h3>Inserir Categoria Simples </h3>
+        <form action="inserir" method="post" style:"background-color:none">
+            <p>Nova categoria: <input type="text" name="categoria"/></p>
+            <p><input type="submit" value="Inserir"/></p>
+        </form>
+        <h3>Inserir Sub-categoria </h3>
+        <form action="inserir-sub-categoria" method="post" style:"background-color:none">
+            <p>Categoria mae (precisa de já existir): <input type="text" name="mae"/></p>
+            <p>Sub-categoria: <input type="text" name="simples"/></p>
+            <p><input type="submit" value="Inserir"/></p>
+        </form>
+        <p></p>
+        <h3>Remover Categoria / Sub-categoria </h3>
+        <form action="remover-categoria" method="post" style:"background-color:none">
+            <p>Remover categoria: <input type="text" name="cat_remover"/></p>
+            <p><input type="submit" value="Remover"/></p>
+        </form>
+        <h2> ALINEA B</h2>
+        <h3> Inserir retalhista </h3>
+        <form action="inserir-retalhista" method="post" style:"background-color:none">
+            <p> TIN: <input type="text" name="ret_tin"/></p>
+            <p> Nome do retalhista: <input type="text" name="ret_nome"/></p>
+            <p> Nome da categoria: <input type="text" name="ret_cat"/></p>
+            <p> Número de Série: <input type="text" name="ret_num"/></p>
+            <p> Fabricante: <input type="text" name="ret_fab"/></p>
+            <p><input type="submit" value="Inserir"/></p>
+        </form>
+        <h3> Remover retalhista </h3>
+        <form action="remover-retalhista" method="post" style:"background-color:none">
+            <p> TIN: <input type="text" name="rem_tin"/></p>
+            <p><input type="submit" value="Remover"/></p>
+        </form>
+        <h2> ALINEA C</h2>
+        <h3> Listar eventos de reposição de uma IVM </h3>
+        <form action="eventos" method="post" style:"background-color:none">
+            <p> Número de série da IVM: <input type="text" name="ivm_number"/></p>
+            <p> Fabricante da IVM: <input type="text" name="ivm_fabricante"/></p>
+            <p><input type="submit" value="Mostrar eventos de reposição"/></p>
+        </form>
+        <h2> ALINEA D</h2>
+        <h3> Listar sub-categorias </h3>
+        <form action="sub-categorias" method="post" style:"background-color:none">
+            <p> Categoria: <input type="text" name="super_cat"/></p>
+            <p><input type="submit" value="Mostrar sub-categorias"/></p>
+        </form>
+    </body>
+</html>
